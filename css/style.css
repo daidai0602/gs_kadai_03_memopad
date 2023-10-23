@@ -1,0 +1,109 @@
+body{
+  margin:0;
+  padding:0;
+  text-align:left;
+  font-size: 32px;
+  width:100%;
+}
+header{
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  font-size: 50px;
+}
+h1{
+  font-size: 100%;
+}
+main{
+  width:100%;
+  display: block;
+  border-bottom:1px solid #ccc;
+  position:relative;
+  text-align: center;
+}
+footer{
+  background-color: #fff;
+  border-bottom:1px solid #ccc;
+  text-align: center;
+}
+.block_a{
+  font-size:100%;
+  border-bottom:1px solid #fff;
+  padding-top: 20px;
+}
+.text_b{
+  font-size:60%;
+  border-bottom:1px solid #fff;
+  padding: 20px 0px;
+}
+.main_pic {
+  width: 35%;
+}
+.main_logo{
+    width: 15%;
+    height: auto;
+    padding-top: 10px;
+}
+.header_text {
+  text-align: center;
+  padding: 10px 0 20px 0;
+  color: #00a7ea;
+  font-weight: bold;
+  font-family: "DINOT-Bold", "Helvetica Neue", Arial, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ", "Hiragino Kaku Gothic", "MS PGothic", sans-serif;
+}
+#btn {
+  display: block;
+  margin: auto;
+  font-size: 28px;
+  width: 300px;
+  height: 50px;
+  background-color: #8dc3f5;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+#btn:hover {
+  opacity:0.5;
+	transition:0.3s;
+}
+select {
+  font-size: 20px;
+  text-align: center;
+  height: auto;
+}
+
+.back_btn {
+  margin-bottom: 20px;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+}
+.text_c {
+  padding: 20px 0px;
+  font-size: 18px;
+}
+.link {
+  transition: opacity .25s, color .25s ;
+}
+.link:hover {
+  color: #d15400;
+  opacity: 0.5;
+}
+#compatibilityScore {
+  color: #00a7ea;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+/*** フェードインアニメーションを作って ***/
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/*** bodyに反映させる ***/
+.animation{
+  animation: fadeIn 3s forwards;
+}
+.sample p{
+  margin: 0;
+  padding: 2rem;
+}

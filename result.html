@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>相性診断</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    </head>
+<body>
+  <div class="animation">
+
+    <header>
+      <div class="header_inner">
+        <img class="main_logo" src="./img/logo.svg" alt="">
+        <h1 class="header_text">LAB16期 相性診断</h1>
+      </div>
+    </header>
+    
+    <main>
+      <div class="block_a">
+            <p>MBTI（16パーソナリティ）分類タイプであなたと相手の相性をご紹介します。</p>
+            <p>相性診断をしたい人を以下から選択してください</p>
+            <p class="text_b">※Notionの<a class="link" href="https://ultra-carpenter-f73.notion.site/4b0cd342b3614a49a0a42e05906a704a?v=411d9e17dc8442e5afe5c38250d6775a">プロフィールサイト</a>
+              でMBTIデータを入力をした方を選択できます</p>
+              <img class="main_pic" src="./img/mbti-types-thumb-1920x1080-354195.png" alt="" srcset="">
+            </div>
+          <p class="result">相性スコア: <span id="compatibilityScore"></span></p>
+
+          <div class="text_c">
+            <p>※5が最高の相性、１が最低の相性となっています</p>
+            <p>詳細は <a class="link" href="https://tell-personality.com/16personality_compatibility/">こちら</a>をご参照ください </p>
+          </div>
+            <!-- 直前のページに戻る -->
+          <button class="back_btn" onclick="history.back()">戻る</button>
+          
+      </main>
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const value = urlParams.get('value');
+        // 相性スコアを表示
+        compatibilityScore.textContent = `${value}`;
+
+
+      </script>
+
+  </div>
+</body>
+</html>

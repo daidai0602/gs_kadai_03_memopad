@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width">
+<title>相性診断</title>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header_inner">
+    <img class="main_logo" src="./img/logo.svg" alt="">
+    <h1 class="header_text">LAB16期 相性診断</h1>
+  </div>
+</header>
+<main>
+  <div class="main_box">
+    <div class="block_a">
+      <p>MBTI（16パーソナリティ）分類タイプであなたと相手の相性をご紹介します。</p>
+      <p>相性診断をしたい人を以下から選択してください</p>
+      <p class="text_b">※Notionの<a class="link" href="https://ultra-carpenter-f73.notion.site/4b0cd342b3614a49a0a42e05906a704a?v=411d9e17dc8442e5afe5c38250d6775a">プロフィールサイト</a>
+        でMBTIデータを入力をした方を選択できます</p>
+        <img class="main_pic" src="./img/mbti-types-thumb-1920x1080-354195.png" alt="" srcset="">
+    </div>
+      <label for="your-personality">あなたの名前:</label>
+      <select id="your-personality" required>
+        <option value="person0">選択してください</option>
+        <option value="秋元 聡美">秋元 聡美/ENFP</option>
+        <option value="片岡 星南">片岡 星南/ENTP</option>
+        <option value="鎌田 麗華">鎌田 麗華/INFP</option>
+        <option value="河村 真奈美">河村 真奈美/INTP</option>
+        <option value="木村 勇貴">木村 勇貴/ENFJ</option>
+        <option value="久保田 圭介">久保田 圭介/ESTJ</option>
+        <option value="栗原 悠真">栗原 悠真/ENTJ</option>
+        <option value="関根 祐司">関根 祐司/INFP</option>
+        <option value="寺田 果歩">寺田 果歩/INFJ</option>
+        <option value="奈良 大輔">奈良 大輔/INTP</option>
+        <option value="西谷 奏子">西谷 奏子/ISFJ</option>
+        <option value="鍋島 侑真">鍋島 侑真/ISFP</option>
+        <option value="大島 大介">大島 大介/ENTJ</option>
+        <option value="松岡 絵美">松岡 絵美/ENTP</option>
+        <option value="木村 朋広">木村 朋広/ISFP</option>
+        <option value="神山 蘭子">神山 蘭子/ENFP</option>
+        <option value="水木 凛空">水木 凛空/ENTP</option>
+        <!-- 他の人の名前を追加 -->
+     </select>
+
+      <label for="partner-personality">相手の名前:</label>
+      <select id="partner-personality" required>
+        <option value="person0">選択してください</option>
+        <option value="秋元 聡美">秋元 聡美/ENFP</option>
+        <option value="片岡 星南">片岡 星南/ENTP</option>
+        <option value="鎌田 麗華">鎌田 麗華/INFP</option>
+        <option value="河村 真奈美">河村 真奈美/INTP</option>
+        <option value="木村 勇貴">木村 勇貴/ENFJ</option>
+        <option value="久保田 圭介">久保田 圭介/ESTJ</option>
+        <option value="栗原 悠真">栗原 悠真/ENTJ</option>
+        <option value="関根 祐司">関根 祐司/INFP</option>
+        <option value="寺田 果歩">寺田 果歩/INFJ</option>
+        <option value="奈良 大輔">奈良 大輔/INTP</option>
+        <option value="西谷 奏子">西谷 奏子/ISFJ</option>
+        <option value="鍋島 侑真">鍋島 侑真/ISFP</option>
+        <option value="大島 大介">大島 大介/ENTJ</option>
+        <option value="松岡 絵美">松岡 絵美/ENTP</option>
+        <option value="木村 朋広">木村 朋広/ISFP</option>
+        <option value="神山 蘭子">神山 蘭子/ENFP</option>
+        <option value="水木 凛空">水木 凛空/ENTP</option>
+        <option value="岩田 剛典">岩田 剛典/ENTJ</option>
+        <option value="江頭2:50">江頭2:50/INFJ</option>
+        <option value="ローランド">ローランド/ISFP</option>
+        <!-- 他の人の名前を追加 -->
+     </select>
+
+    <div class="submit_button">
+      <button id="btn" >決定</button>
+    </div>
+    <span id="compatibilityScore"></span>
+  </div>
+</main>
+
+<footer></footer>
+<script src="./js/jquery-2.1.3.min.js"></script>
+<script>
+    const nameToPersonalityMapping = {
+        '秋元 聡美':	'ENFP',
+        '片岡 星南':	'ENTP',
+        '鎌田 麗華':	'INFP',
+        '河村 真奈美':	'INTP',
+        '木村 勇貴':	'ENFJ',
+        '久保田 圭介':	'ESTJ',
+        '栗原 悠真':	'ENTJ',
+        '関根 祐司':	'INFP',
+        '寺田 果歩':	'INFJ',
+        '奈良 大輔':	'INTP',
+        '西谷 奏子':	'ISFJ',
+        '大島 大介':	'ENTJ',
+        '鍋島 侑真':	'ISFP',
+        '松岡 絵美':	'ENTP',
+        '木村 朋広':	'ISFP',
+        '神山 蘭子':	'ENFP',
+        '水木 凛空':	'INTJ',
+        '岩田 剛典':	'ENTJ',
+        '江頭2:50':	'INFJ',
+        'ローランド':	'ISFP',
+         // 他の人と性格の型の対応を設定
+    };
+
+    // ここで性格の相性のポイントテーブルを作成
+    const compatibilityMatrix = {
+        'ENFP': {'ENFP': 4,'ENTP': 3,'INFP':2,'INTP':3,'ENFJ':3,'ESTJ':3,'ENTJ':2,'INFJ':4,'ISFJ':2,'ISFP':4,'INTJ':2},
+        'ENTP': {'ENFP': 3,'ENTP': 4,'INFP':3,'INTP':2,'ENFJ':2,'ESTJ':2,'ENTJ':3,'INFJ':2,'ISFJ':1,'ISFP':5,'INTJ':4},
+        'INFP': {'ENFP': 2,'ENTP': 3,'INFP':4,'INTP':3,'ENFJ':4,'ESTJ':1,'ENTJ':2,'INFJ':3,'ISFJ':2,'ISFP':4,'INTJ':2},
+        'INTP': {'ENFP': 3,'ENTP': 2,'INFP':3,'INTP':4,'ENFJ':2,'ESTJ':2,'ENTJ':4,'INFJ':2,'ISFJ':4,'ISFP':3,'INTJ':3},
+        'ENFJ': {'ENFP': 3,'ENTP': 2,'INFP':4,'INTP':2,'ENFJ':4,'ESTJ':3,'ENTJ':4,'INFJ':2,'ISFJ':3,'ISFP':2,'INTJ':4},
+        'ESTJ': {'ENFP': 3,'ENTP': 2,'INFP':1,'INTP':2,'ENFJ':3,'ESTJ':4,'ENTJ':3,'INFJ':5,'ISFJ':4,'ISFP':2,'INTJ':3},
+        'ENTJ': {'ENFP': 2,'ENTP': 3,'INFP':2,'INTP':4,'ENFJ':4,'ESTJ':3,'ENTJ':4,'INFJ':4,'ISFJ':5,'ISFP':1,'INTJ':2},
+        'INFJ': {'ENFP': 4,'ENTP': 2,'INFP':3,'INTP':2,'ENFJ':2,'ESTJ':5,'ENTJ':4,'INFJ':4,'ISFJ':3,'ISFP':2,'INTJ':4},
+        'ISFJ': {'ENFP': 3,'ENTP': 1,'INFP':2,'INTP':4,'ENFJ':3,'ESTJ':4,'ENTJ':5,'INFJ':3,'ISFJ':4,'ISFP':3,'INTJ':3},
+        'ISFP': {'ENFP': 4,'ENTP': 5,'INFP':4,'INTP':3,'ENFJ':2,'ESTJ':2,'ENTJ':1,'INFJ':2,'ISFJ':3,'ISFP':4,'INTJ':4},
+        'INTJ': {'ENFP': 2,'ENTP': 4,'INFP':2,'INTP':3,'ENFJ':4,'ESTJ':3,'ENTJ':2,'INFJ':4,'ISFJ':3,'ISFP':4,'INTJ':4},
+    };
+
+    const yourPersonalitySelect = document.getElementById('your-personality');
+    const partnerPersonalitySelect = document.getElementById('partner-personality');
+    const compatibilityScore = document.getElementById('compatibilityScore');
+
+    document.getElementById('btn').addEventListener('click', function() {
+        const yourName = yourPersonalitySelect.value;
+        const partnerName = partnerPersonalitySelect.value;
+  
+        // 名前を性格の型に変換
+        const yourPersonality = nameToPersonalityMapping[yourName];
+        const partnerPersonality = nameToPersonalityMapping[partnerName];
+
+        // 選択が "選択してください" でないか確認
+        if (yourPersonality && partnerPersonality) {
+
+          // 相性ポイントを取得
+          const compatibilityPoints = compatibilityMatrix[yourPersonality];
+          const score = compatibilityPoints[partnerPersonality];
+          window.location.href = `./result.html?value=${score}`;
+        }
+
+    });
+</script>
+</body>
+</html>
