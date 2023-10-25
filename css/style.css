@@ -51,20 +51,36 @@ footer{
   font-weight: bold;
   font-family: "DINOT-Bold", "Helvetica Neue", Arial, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ", "Hiragino Kaku Gothic", "MS PGothic", sans-serif;
 }
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 10px 0;
+}
 #btn {
   display: block;
   margin: auto;
-  font-size: 28px;
+  font-size: 20px;
   width: 300px;
-  height: 50px;
+  height: 40px;
   background-color: #8dc3f5;
-  margin-top: 50px;
-  margin-bottom: 40px;
 }
 #btn:hover {
   opacity:0.5;
 	transition:0.3s;
 }
+#clear {
+  display: block;
+  margin: auto;
+  font-size: 20px;
+  width: 300px;
+  height: 40px;
+  background-color: lightgray;
+}
+#clear:hover {
+  opacity:0.5;
+	transition:0.3s;
+}
+
 select {
   font-size: 20px;
   text-align: center;
@@ -91,7 +107,7 @@ select {
 #compatibilityScore {
   color: #00a7ea;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 /*** フェードインアニメーションを作って ***/
@@ -107,3 +123,24 @@ select {
   margin: 0;
   padding: 2rem;
 }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 20px 0;
+  width:50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  table, tr td, th {
+    border:1px solid gray;
+  }
+  th{
+    width:30%;
+    font-size:16px;
+    background-color:lightskyblue;;
+  }
+  td{
+    font-size:16px;
+    border-bottom: 1px solid #8dc3f5;
+  }
